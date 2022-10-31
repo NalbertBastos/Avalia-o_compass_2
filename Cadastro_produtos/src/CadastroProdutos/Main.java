@@ -17,9 +17,7 @@ public class Main {
 		        
 		        
 		
-		//CriaConexao criaConexao = new CriaConexao();
 		
-		//Connection connection = criaConexao.recuperarConexao();
 		
 		
 		
