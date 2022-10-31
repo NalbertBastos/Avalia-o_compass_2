@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Nalbert
+ *
+ */
+module Emoticons {
+}
