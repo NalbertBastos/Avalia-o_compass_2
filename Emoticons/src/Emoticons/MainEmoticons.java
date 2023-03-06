@@ -1,68 +1,34 @@
 package Emoticons;
 
 import java.util.Scanner;
-//import java.util.regex.Matcher;
-//import java.util.regex.Pattern;
 
-public class MainEmoticons {
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite uma mensagem:");
+        String mensagem = scanner.nextLine();
 
-	public static void main(String[] args) {
-		Scanner ler = new Scanner(System.in);
-		
-		String msg;
-		
-		String f = ":-)";
-		String t = ":-(";
-		
-		System.out.println("insira mensagem:");
-		msg = ler.next();
-		int total = 0;
-		int total2 = 0;
-		
-		
-		for(int i=0; i>msg.length(); i++) {
-			if(msg.substring(i , i).contains(f)) {
-				
-			  total ++;
-			  System.out.println(msg.substring(i,i));
-			
-			}else if(msg.substring(i , i).contains(t)) {
-				System.out.println(msg.substring(i,i));
-				total2++;
-			}else {
-				System.out.println(msg.substring(i,i));
-			}
-			
-			
-		}
-		
-		if(total > total2) {
-			System.out.println("Feliz");
-		}else if (total<total2) {
-			System.out.println("triste");
-		}
-        if(total==total2) {
-			System.out.println("Neutro");
-		}
-		
-		//System.out.println(total);
-		//System.out.println(i);
-		//System.out.println(total2);
-		
-		
-		
-		
-	}
+        int qtdFeliz = contarEmoticons(mensagem, ":-)");
+        int qtdTriste = contarEmoticons(mensagem, ":-(");
 
-}
-/*Pattern pattern = Pattern.compile(msg);
-Matcher matcher1 = pattern.matcher(feliz);
-Matcher matcher = pattern.matcher(triste);
+        if (qtdFeliz > qtdTriste) {
+            System.out.println("Feliz");
+        } else if (qtdTriste > qtdFeliz) {
+            System.out.println("Triste");
+        } else {
+            System.out.println("Neutro");
+        }
+    }
 
-while(matcher1.find()) {
-	total++;
-}
-while(matcher.find()) {
-	total2++;
-}*/
-//System.out.println(total);
+    public static int contarEmoticons(String mensagem, String emoticon) {
+        int index = 0;
+        int count = 0;
+        while (index != -1) {
+            index = mensagem.indexOf(emoticon, index);
+            if (index != -1) {
+                count++;
+                index += emoticon.length();
+            }
+        }
+        return count;
+    }
