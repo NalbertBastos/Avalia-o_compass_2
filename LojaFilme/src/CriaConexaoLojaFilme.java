@@ -14,7 +14,7 @@ public class CriaConexaoLojaFilme {
 		ComboPooledDataSource comboPoolDataSource = new ComboPooledDataSource();
 		comboPoolDataSource.setJdbcUrl("jdbc:mysql://localhost/loja_filmes?useTimezone=true&serverTimezone=UTC");
 		comboPoolDataSource.setUser("root");
-		comboPoolDataSource.setPassword("P@lmerasskate10");
+		comboPoolDataSource.setPassword("");
 		
 		this.dataSource = comboPoolDataSource;
 	}
