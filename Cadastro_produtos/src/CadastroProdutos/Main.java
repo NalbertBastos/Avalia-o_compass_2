@@ -13,7 +13,7 @@ public class Main {
 		Scanner ler = new Scanner(System.in);
 		int op=0;
 		Connection connection = DriverManager
-		        .getConnection("jdbc:mysql://localhost/cadastro_produtos?useTimezone=true&serverTimezone=UTC","root","P@lmerasskate10");
+		        .getConnection("jdbc:mysql://localhost/cadastro_produtos?useTimezone=true&serverTimezone=UTC","root","");
 		        
 		        
 		
